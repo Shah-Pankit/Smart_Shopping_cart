@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Recording with Flask</title>
+    <script>
+        var duration = { duration * 1000 };  // Define the duration variable
+    
+        function openLiveFeed() {
+            // Change the current window's location to the live feed route
+            window.location.href = '/live_feed';
+            
+            // Close the window after the specified duration in milliseconds
+            setTimeout(function() {
+                // You may add additional logic here if needed
+            }, duration);
+        }
+
+        // Add your logic for the additional buttons
+        function doSomething() {
+            alert("Button 1 Clicked!");
+            // Add your specific logic here
+        }
+
+        function doSomethingElse() {
+            alert("Button 2 Clicked!");
+            // Add your specific logic here
+        }
+    </script>
+</head>
+<body>
+    <h1>Video Recording with Flask</h1>
+
+    <form action="/start_recording" method="post" onsubmit="openLiveFeed(); return false;">
+        <label for="label">Label:</label>
+        <input type="text" name="label" required>
+        <br>
+        <input type="submit" value="Start Recording">
+    </form>
+
+    <!-- Two additional buttons -->
+    <button onclick="doSomething()">Button 1</button>
+    <button onclick="doSomethingElse()">Button 2</button>
+</body>
+</html>
